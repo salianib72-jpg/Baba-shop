@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name=".helpers.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BabaMobileShop"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!-- Splash Activity -->
+        <activity
+            android:name=".activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BabaMobileShop.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Login Activity -->
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Register Activity -->
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- OTP Verification Activity -->
+        <activity
+            android:name=".activities.OTPVerificationActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Main/Home Activity -->
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+
+        <!-- Product List Activity -->
+        <activity
+            android:name=".activities.ProductListActivity"
+            android:exported="false" />
+
+        <!-- Product Detail Activity -->
+        <activity
+            android:name=".activities.ProductDetailActivity"
+            android:exported="false" />
+
+        <!-- Cart Activity -->
+        <activity
+            android:name=".activities.CartActivity"
+            android:exported="false" />
+
+        <!-- Checkout Activity -->
+        <activity
+            android:name=".activities.CheckoutActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Payment Activity -->
+        <activity
+            android:name=".activities.PaymentActivity"
+            android:exported="false" />
+
+        <!-- Order History Activity -->
+        <activity
+            android:name=".activities.OrderHistoryActivity"
+            android:exported="false" />
+
+        <!-- Order Tracking Activity -->
+        <activity
+            android:name=".activities.OrderTrackingActivity"
+            android:exported="false" />
+
+        <!-- Order Detail Activity -->
+        <activity
+            android:name=".activities.OrderDetailActivity"
+            android:exported="false" />
+
+        <!-- Wishlist Activity -->
+        <activity
+            android:name=".activities.WishlistActivity"
+            android:exported="false" />
+
+        <!-- Profile Activity -->
+        <activity
+            android:name=".activities.ProfileActivity"
+            android:exported="false" />
+
+        <!-- Edit Profile Activity -->
+        <activity
+            android:name=".activities.EditProfileActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Notification Activity -->
+        <activity
+            android:name=".activities.NotificationActivity"
+            android:exported="false" />
+
+        <!-- Search Activity -->
+        <activity
+            android:name=".activities.SearchActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Category Activity -->
+        <activity
+            android:name=".activities.CategoryActivity"
+            android:exported="false" />
+
+        <!-- Settings Activity -->
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:exported="false" />
+
+        <!-- About Activity -->
+        <activity
+            android:name=".activities.AboutActivity"
+            android:exported="false" />
+
+        <!-- Contact Activity -->
+        <activity
+            android:name=".activities.ContactActivity"
+            android:exported="false" />
+
+        <!-- Referral Activity -->
+        <activity
+            android:name=".activities.ReferralActivity"
+            android:exported="false" />
+
+        <!-- Coupon Activity -->
+        <activity
+            android:name=".activities.CouponActivity"
+            android:exported="false" />
+
+        <!-- Live Chat Activity -->
+        <activity
+            android:name=".activities.LiveChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Image View Activity -->
+        <activity
+            android:name=".activities.ImageViewActivity"
+            android:exported="false" />
+
+        <!-- Address Activity -->
+        <activity
+            android:name=".activities.AddressActivity"
+            android:exported="false" />
+
+        <!-- Add Address Activity -->
+        <activity
+            android:name=".activities.AddAddressActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Firebase Messaging Service -->
+        <service
+            android:name=".helpers.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- File Provider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>
